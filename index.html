@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Paul Guldin</title>
+    <style>
+        body {
+            background-color: #DCEAF7;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* Conteneur pour superposer les deux images */
+        .image-container {
+            position: relative;
+            display: inline-block;
+            max-width: 100%;
+        }
+
+        .main-img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Style du lien-bouton centré */
+        .button-link {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: block;
+            max-width: 90%;
+            cursor: pointer; /* Force le curseur en forme de main */
+        }
+
+        .button-img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        p {
+            margin-top: 20px;
+            text-align: center;
+            max-width: 600px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Zone des images centrées avec bouton cliquable -->
+    <div class="image-container">
+        <img src="images/main.png" alt="Image principale" class="main-img">
+        
+        <!-- Remplacez "page-suivante.html" par l'adresse de votre choix -->
+        <a href="3min20lejeu.html" class="button-link">
+            <img src="images/Button3min20.png" alt="Bouton" class="button-img">
+        </a>
+    </div>
+
+    <!-- Texte sous l'image -->
+    <p>
+        &copy; 2026, Paul Guldin, tous droits réservés<br>
+        Mentions légales : Ce site propose un jeu mettant en scène une façon ludique d’expérimenter une certaine forme de communication. Son contenu est purement d’ordre récréatif. Il ne peut remplacer un outil thérapeutique donnant lieu à un avis médical. L’activité proposée par ce site ne constitue pas un exercice de la médecine.
+    </p>
+
+</body>
+</html>

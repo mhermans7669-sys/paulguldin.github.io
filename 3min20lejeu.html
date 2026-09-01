@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3’20’’ - Un cadre pour jouer à communiquer</title>
+    <style>
+        /* --- STYLES GENERAUX & TYPOGRAPHIE --- */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #00B050; /* Fond vert demandé */
+            color: #FFFFCC; /* Couleur jaune clair pâle pour les caractères */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: row;
+            gap: 50px;
+        }
+
+        /* --- ZONE DE TEXTE PRINCIPALE --- */
+        main {
+            flex: 1;
+            max-width: 700px;
+        }
+
+        h1 {
+            font-family: 'Dreaming Outloud Script Pro', 'Brush Script MT', 'Comic Sans MS', cursive;
+            font-size: 80px; /* Taille exacte demandée */
+            text-align: center; /* Titre centré sur le texte */
+            margin-top: 0;
+            margin-bottom: 40px;
+            color: #FFFFCC; /* Jaune clair pâle comme le texte */
+            font-weight: normal;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 24px;
+            text-align: justify;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 30px;
+        }
+
+        li {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 20px;
+            text-align: justify;
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #FFFFCC;
+        }
+
+        strong {
+            color: #ffffff; /* Blanc pour faire ressortir les éléments en gras sur le fond vert */
+        }
+
+        /* --- BARRE LATERALE (Ordinateur) --- */
+        aside {
+            width: 250px;
+            flex-shrink: 0;
+        }
+
+        .sidebar-sticky {
+            position: sticky;
+            top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+            background-color: rgba(255, 255, 255, 0.1); /* Fond semi-transparent pour détacher les boutons discrètement */
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* --- BOUTONS DE TELECHARGEMENT --- */
+        .download-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            color: #FFFFCC; /* Texte des boutons en jaune clair pâle */
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .download-btn img {
+            width: 70px; /* Taille optimisée pour l'icône de la balle de tennis */
+            height: 70px;
+            margin-bottom: 10px;
+            display: block; /* Force l'affichage de l'image */
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+
+        /* --- PIED DE PAGE & MENTIONS --- */
+        footer {
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 20px;
+            font-size: 0.9rem;
+            color: #FFFFCC;
+            opacity: 0.85; /* Légèrement plus discret */
+        }
+
+        .copyright {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .legal {
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        /* ======================================================= */
+        /* --- LAYOUT ADAPTATIF (SMARTPHONE) --- */
+        /* ======================================================= */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 20px;
+                gap: 40px;
+            }
+
+            main {
+                max-width: 100%;
+            }
+
+            p, li {
+                text-align: left; /* Plus lisible sur smartphone */
+            }
+
+            aside {
+                width: 100%;
+            }
+
+            .sidebar-sticky {
+                position: static;
+                flex-direction: row;
+                justify-content: space-around;
+                background-color: rgba(255, 255, 255, 0.05);
+                padding: 20px 10px;
+            }
+
+            .download-btn {
+                flex: 1;
+                font-size: 0.9rem;
+            }
+
+            .download-btn img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <!-- Zone Principale de lecture -->
+    <main>
+        <h1>3’20’’</h1>
+        
+        <p>3’20’’ est un jeu. Un jeu collaboratif. Un cadre pour jouer à communiquer. Un jeu où l’on fait « comme si… », comme on joue à la dinette, comme on joue aux cow-boys et aux indiens.</p>
+        
+        <p>Au quotidien, nous ne communiquons pas : nous faisons du ping-pong. Nous coupons la parole, nous préparons notre réponse pendant que l’autre parle, et nous fuyons les regards trop appuyés de peur d’être mis à nu.</p>
+        
+        <p>Ce jeu vous propose de tricher avec les règles tacites de la communication naturelle pour inverser la donne. En acceptant trois règles contre-intuitives, 3’20’’ vous propose de vivre une expérience de connexion brute :</p>
+        
+        <ul>
+            <li><strong>La Règle du Silence absolu :</strong> Le silence n'est pas l'absence de communication, c'est le socle qui lui permet d'exister. Il protège le jeu du bruit quotidien et crée un espace sécurisé où chaque mot futur prendra un poids inédit. Il donne aussi la permission de ne pas parler.</li>
+            <li><strong>Le Temps suspendu (La Parole souveraine) :</strong> Oubliez la spontanéité forcée et la pression de la répartie. Quand c'est votre tour, l'autre n'est qu'une oreille pure. Vous avez le droit d'hésiter, de chercher vos mots, sans peur d'être interrompu.</li>
+            <li><strong>L’Ancrage visuel :</strong> Nous passons nos vies à regarder des écrans ou à fuir les yeux des autres. Ici, le regard partagé en silence remet le non-verbal sur le devant de la scène. C'est le moment où l'on arrête de parler de soi pour enfin se laisser voir.</li>
+        </ul>
+        
+        <p>Ce n'est pas un exercice de thérapie, c'est un jeu. Et comme tout jeu, c'est l'obéissance stricte à ses règles artificielles qui crée la magie de l'expérience. Serez-vous prêt à vous taire pour enfin vous entendre ?</p>
+        
+        <p>Mais 3’20’’ n’est pas un simple jeu. C’est un univers. Un entrelacement d’objets, de gestes, de mots, symboles, symboliques et symbolisant qui donnent corps à ses règles, ces règles surréalistes, farfelues, résolument et volontairement contre-intuitives.</p>
+        
+        <p>Le jeu 3’20’’ s’adresse à tout couple ou « binôme » constitué de deux personnes désireuses de faire l’expérience de communiquer autrement, pendant un temps court mais somme toute suffisamment long pour permettre à l'expérience d'offrir une conclusion. Une partie dure environ 30’.</p>
+        
+        <!-- Pied de page -->
+        <footer>
+            <div class="copyright">© 2026, Paul Guldin, tous droits réservés.</div>
+            <div class="legal"><strong>Mentions légales :</strong> Ce site propose un jeu mettant en scène une façon ludique d’expérimenter une certaine forme de communication. Son contenu est purement d’ordre récréatif. Il ne peut remplacer un outil thérapeutique donnant lieu à un avis médical. L’activité proposée par ce site ne constitue pas un exercice de la médecine.</div>
+        </footer>
+    </main>
+
+    <!-- Section Boutons (Barre latérale sur PC, Blocs du bas sur Mobile) -->
+    <aside>
+        <div class="sidebar-sticky">
+            <a href="3min20Regles.pdf" class="download-btn" download="3min20Regles.pdf">
+                <img src="TennisBall.png" alt="Règles du jeu">
+                <span>Règles du jeu</span>
+            </a>
+            <a href="3min20Genese.pdf" class="download-btn" download="3min20Genese.pdf">
+                <img src="TennisBall.png" alt="Genèse des règles">
+                <span>Genèse des règles</span>
+            </a>
+        </div>
+    </aside>
+
+</div>
+
+</body>
+</html>
