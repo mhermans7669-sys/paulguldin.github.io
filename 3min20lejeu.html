@@ -3,188 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3’20’’ - Un cadre pour jouer à communiquer</title>
+    <title>Le Jeu - Présentation</title>
     <style>
-        /* --- STYLES GENERAUX & TYPOGRAPHIE --- */
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #00B050; /* Fond vert demandé */
-            color: #FFFFCC; /* Couleur jaune clair pâle pour les caractères */
+        /* --- Styles Généraux --- */
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: row;
-            gap: 50px;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #00B050;
+            color: #ffffcc;
+            line-height: 1.6;
         }
 
-        /* --- ZONE DE TEXTE PRINCIPALE --- */
-        main {
-            flex: 1;
-            max-width: 700px;
-        }
-
-        h1 {
-            font-family: 'Dreaming Outloud Script Pro', 'Brush Script MT', 'Comic Sans MS', cursive;
-            font-size: 80px; /* Taille exacte demandée */
-            text-align: center; /* Titre centré sur le texte */
-            margin-top: 0;
-            margin-bottom: 40px;
-            color: #FFFFCC; /* Jaune clair pâle comme le texte */
-            font-weight: normal;
-        }
-
-        p {
-            font-size: 1.1rem;
-            margin-bottom: 24px;
-            text-align: justify;
-        }
-
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-            margin-bottom: 30px;
-        }
-
-        li {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-left: 20px;
-            text-align: justify;
-        }
-
-        li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #FFFFCC;
-        }
-
-        strong {
-            color: #ffffff; /* Blanc pour faire ressortir les éléments en gras sur le fond vert */
-        }
-
-        /* --- BARRE LATERALE (Ordinateur) --- */
-        aside {
-            width: 250px;
-            flex-shrink: 0;
-        }
-
-        .sidebar-sticky {
-            position: sticky;
-            top: 40px;
-            display: flex;
-            flex-direction: column;
-            gap: 35px;
-            background-color: rgba(255, 255, 255, 0.1); /* Fond semi-transparent pour détacher les boutons discrètement */
-            padding: 25px;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* --- BOUTONS DE TELECHARGEMENT --- */
-        .download-btn {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        /* --- Entête (Titre et Image) --- */
+        .hero-banner {
             text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero-banner img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px auto;
+        }
+
+        .hero-banner h1 {
+            font-size: 40px;
+            color: #ffffcc;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* --- Header Sticky (Navigation) --- */
+        .sticky-header {
+            position: -webkit-sticky; /* Pour compatibilité Safari */
+            position: sticky;
+            top: 0;
+            background-color: rgba(0, 80, 35, 0.95); /* Vert foncé transparent pour détacher le menu */
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            display: inline-block;
             text-decoration: none;
-            color: #FFFFCC; /* Texte des boutons en jaune clair pâle */
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: transform 0.2s ease, opacity 0.2s ease;
-        }
-
-        .download-btn img {
-            width: 70px; /* Taille optimisée pour l'icône de la balle de tennis */
-            height: 70px;
-            margin-bottom: 10px;
-            display: block; /* Force l'affichage de l'image */
-        }
-
-        .download-btn:hover {
-            transform: translateY(-3px);
-            opacity: 0.9;
-        }
-
-        /* --- PIED DE PAGE & MENTIONS --- */
-        footer {
-            margin-top: 60px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            padding-top: 20px;
-            font-size: 0.9rem;
-            color: #FFFFCC;
-            opacity: 0.85; /* Légèrement plus discret */
-        }
-
-        .copyright {
+            color: #ffffcc;
             font-weight: bold;
-            margin-bottom: 15px;
+            padding: 10px 25px;
+            margin: 0 10px;
+            border: 2px solid #ffffcc;
+            border-radius: 5px;
+            transition: all 0.3s ease;
         }
 
-        .legal {
-            font-style: italic;
-            line-height: 1.4;
+        .nav-btn:hover {
+            background-color: #ffffcc;
+            color: #00B050;
         }
 
-        /* ======================================================= */
-        /* --- LAYOUT ADAPTATIF (SMARTPHONE) --- */
-        /* ======================================================= */
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                padding: 20px;
-                gap: 40px;
-            }
+        /* --- Section Contenu (Texte immersif) --- */
+        .content-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
 
-            main {
-                max-width: 100%;
-            }
+        .intro-text {
+            font-size: 18px;
+            margin-bottom: 40px;
+            text-align: justify;
+        }
 
-            p, li {
-                text-align: left; /* Plus lisible sur smartphone */
-            }
+        /* --- Bouton d'action Final --- */
+        .cta-container {
+            text-align: center;
+            margin: 50px 0;
+        }
 
-            aside {
-                width: 100%;
-            }
+        .cta-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: #00B050;
+            background-color: #ffffcc;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 15px 40px;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
 
-            .sidebar-sticky {
-                position: static;
-                flex-direction: row;
-                justify-content: space-around;
-                background-color: rgba(255, 255, 255, 0.05);
-                padding: 20px 10px;
-            }
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
 
-            .download-btn {
-                flex: 1;
-                font-size: 0.9rem;
-            }
-
-            .download-btn img {
-                width: 60px;
-                height: 60px;
-            }
+        .cta-btn:active {
+            transform: translateY(-1px);
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    
-    <!-- Zone Principale de lecture -->
-    <main>
-        <h1>3’20’’</h1>
-        
-        <p>3’20’’ est un jeu. Un jeu collaboratif. Un cadre pour jouer à communiquer. Un jeu où l’on fait « comme si… », comme on joue à la dinette, comme on joue aux cow-boys et aux indiens.</p>
+    <!-- 1. Entête avec Image et Titre -->
+    <header class="hero-banner">
+        <img src="3min20-jaune.png" alt="Logo 3min20 Jaune">
+        <!--<h1>Le Jeu</h1>-->
+    </header>
+
+    <!-- 2. Le Header Sticky (Menu de navigation) -->
+    <nav class="sticky-header">
+        <a href="3min20Regles.html" class="nav-btn">Règles</a>
+        <a href="3min20Genese.html" class="nav-btn">Genèse</a>
+        <a href="3min20Genese.pdf" class="nav-btn" download>Téléchargement</a>
+    </nav>
+
+    <!-- 3. Section de texte à compléter -->
+    <main class="content-container">
+        <section class="intro-text">
+            <h2>Section texte à compléter</h2>
+            <p style="margin-top: 15px;">
+                <p>3’20’’ est un jeu. Un jeu collaboratif. Un cadre pour jouer à communiquer. Un jeu où l’on fait « comme si… », comme on joue à la dinette, comme on joue aux cow-boys et aux indiens.</p>
         
         <p>Au quotidien, nous ne communiquons pas : nous faisons du ping-pong. Nous coupons la parole, nous préparons notre réponse pendant que l’autre parle, et nous fuyons les regards trop appuyés de peur d’être mis à nu.</p>
         
@@ -201,29 +148,18 @@
         <p>Mais 3’20’’ n’est pas un simple jeu. C’est un univers. Un entrelacement d’objets, de gestes, de mots, symboles, symboliques et symbolisant qui donnent corps à ses règles, ces règles surréalistes, farfelues, résolument et volontairement contre-intuitives.</p>
         
         <p>Le jeu 3’20’’ s’adresse à tout couple ou « binôme » constitué de deux personnes désireuses de faire l’expérience de communiquer autrement, pendant un temps court mais somme toute suffisamment long pour permettre à l'expérience d'offrir une conclusion. Une partie dure environ 30’.</p>
-        
-        <!-- Pied de page -->
-        <footer>
-            <div class="copyright">© 2026, Paul Guldin, tous droits réservés.</div>
-            <div class="legal"><strong>Mentions légales :</strong> Ce site propose un jeu mettant en scène une façon ludique d’expérimenter une certaine forme de communication. Son contenu est purement d’ordre récréatif. Il ne peut remplacer un outil thérapeutique donnant lieu à un avis médical. L’activité proposée par ce site ne constitue pas un exercice de la médecine.</div>
-        </footer>
-    </main>
 
-    <!-- Section Boutons (Barre latérale sur PC, Blocs du bas sur Mobile) -->
-    <aside>
-        <div class="sidebar-sticky">
-            <a href="3min20Regles.pdf" class="download-btn" download="3min20Regles.pdf">
-                <img src="TennisBall.png" alt="Règles du jeu">
-                <span>Règles du jeu</span>
-            </a>
-            <a href="3min20Genese.pdf" class="download-btn" download="3min20Genese.pdf">
-                <img src="TennisBall.png" alt="Genèse des règles">
-                <span>Genèse des règles</span>
-            </a>
+                [Remplacez ce bloc par votre long texte immersif. Vous pouvez ajouter autant de paragraphes 
+                &lt;p&gt; que nécessaire pour installer l'univers de votre jeu spécial. Le menu du haut restera 
+                visible au fur et à mesure que vos lecteurs feront défiler la page vers le bas.]
+            </p>
+        </section>
+
+        <!-- 4. Bouton final d'appel à l'action -->
+        <div class="cta-container">
+            <a href="regles.html" class="cta-btn">Découvrir les Règles</a>
         </div>
-    </aside>
-
-</div>
+    </main>
 
 </body>
 </html>
