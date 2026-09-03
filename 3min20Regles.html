@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Règles du Jeu</title>
+    <style>
+        /* Styles Généraux */
+        body {
+            background-color: #008050;
+            color: #FFFFCC;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 94vh;
+        }
+
+        /* En-tête / Bandeau de titre */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header img {
+            display: block;
+            margin: 0 auto 10px auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        header h1 {
+            font-size: 18px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        /* Système d'onglets */
+        .tabs-container {
+            display: flex;
+            flex-direction: column;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            flex: 1;
+        }
+
+        /* Cache les boutons radio */
+        input[type="radio"] {
+            display: none;
+        }
+
+        /* Barre des onglets */
+        .tabs-list {
+            display: flex;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #FFFFCC;
+        }
+
+        .tab-label {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: 1px solid #FFFFCC;
+            border-bottom: none;
+            margin-right: 5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            background-color: rgba(255, 255, 204, 0.1);
+            transition: background 0.3s;
+        }
+
+        .tab-label:hover {
+            background-color: rgba(255, 255, 204, 0.2);
+        }
+
+        /* Zone de contenu */
+        .tab-content {
+            display: none;
+            padding: 20px 0;
+        }
+
+        /* Typographie et listes */
+        p {
+            margin: 0 0 15px 0;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        
+        ul { list-style-type: disc; }
+        ul ul { list-style-type: circle; }
+        ol { list-style-type: decimal; }
+        
+        /* Styles spécifiques pour correspondre à vos structures de listes */
+        .roman-list { list-style-type: upper-roman; }
+        .alpha-list { list-style-type: lower-alpha; }
+        .roman-sublist { list-style-type: lower-roman; }
+
+        /* Gestion de l'affichage de l'onglet sélectionné */
+        #tab1:checked ~ .tabs-list label[for="tab1"],
+        #tab2:checked ~ .tabs-list label[for="tab2"],
+        #tab3:checked ~ .tabs-list label[for="tab3"],
+        #tab4:checked ~ .tabs-list label[for="tab4"],
+        #tab5:checked ~ .tabs-list label[for="tab5"] {
+            background-color: #FFFFCC;
+            color: #008050;
+            font-weight: bold;
+        }
+
+        #tab1:checked ~ .content-container #content1,
+        #tab2:checked ~ .content-container #content2,
+        #tab3:checked ~ .content-container #content3,
+        #tab4:checked ~ .content-container #content4,
+        #tab5:checked ~ .content-container #content5 {
+            display: block;
+        }
+
+        /* Pied de page (Copyright) */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 204, 0.3);
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Bandeau de titre -->
+    <header>
+        <img src="3min20-jaune.png" alt="3min20-jaune.png">
+        <h1>Les Règles</h1>
+    </header>
+
+    <!-- Conteneur Principal des Onglets -->
+    <div class="tabs-container">
+        <!-- Déclencheurs invisibles -->
+        <input type="radio" id="tab1" name="navigation" checked>
+        <input type="radio" id="tab2" name="navigation">
+        <input type="radio" id="tab3" name="navigation">
+        <input type="radio" id="tab4" name="navigation">
+        <input type="radio" id="tab5" name="navigation">
+
+        <!-- Boutons de navigation -->
+        <div class="tabs-list">
+            <label for="tab1" class="tab-label">La Loi</label>
+            <label for="tab2" class="tab-label">Les Éléments</label>
+            <label for="tab3" class="tab-label">La Cafetière Mentale</label>
+            <label for="tab4" class="tab-label">Les Symboles</label>
+            <label for="tab5" class="tab-label">La Séquence</label>
+        </div>
+
+        <!-- Contenus -->
+        <div class="content-container">            
+            <!-- 1. La Loi -->
+            <div id="content1" class="tab-content">
+                <p>Avant de décrire les éléments concrets et la séquence à suivre pour jouer, 
+                    il y a lieu de préciser d'abord une chose importante, à savoir, qu'une partie de <b>3’20’’</b> est censée se dérouler lors d'une marche silencieuse.
+                    <br>
+                    <br>Ensuite, il est indispensable de présenter l'élément premier qui chapeaute tout le jeu et qui lui confère 
+                    toute sa substance et sa singularité : la Loi du Jeu. 
+                    Celle-ci est constituée de deux règles : <b>la Règle du Silence</b>, et <b>la levée 
+                    partielle</b> de celle-ci.<br><br>
+
+                    <b>La Règle du Silence</b> s’applique par défaut, et ce dès avant le commencement d’une partie, 
+                    puisqu’une partie du jeu <b>3’20’’</b> prend sa place au cours d’une marche silencieuse. 
+                    Le commencement d’une partie ne constitue donc pas un moment de rupture majeur par rapport 
+                    au contexte dans lequel il se déroule. <br><br>
+
+                    « Ceci n’est pas une match »<br><br>
+
+                    De rupture il y aura bien, mais dans un deuxième temps. Une rupture partielle, et cela grâce aux modalités particulières
+                    de la levée de la Règle du Silence. Cette levée est partielle parce qu’elle ne 
+                    concerne qu’un des deux joueur à la fois. Le jeu exclut tout ping-pong dans la communication verbale. 
+                    Les protagonistes prendront la parole tour à tour sans possibilité d’interférer avec l’expression 
+                    de leur partenaire. 
+                    En revanche, la communication non-verbale - notamment par <b>contact visuel</b> - est toujours permise, même encouragée.
+                    Un certain lapse de temps, à nouveau en silence, devra être respecté 
+                    entre deux prises de parole, au moment de se passer le témoin : la balle de tennis.  
+                    Ce lapse de temps aura une durée variable, mais ne descendra jamais sous un délai incompressible  … de <b>3’20’’</b>.<br><br>
+
+                    Les modalités de désignations du premier joueur à détenir le droit à la parole ainsi que 
+                    celle de la transmission de ce droit seront précisées dans la section « La Séquence ».<br><br>
+
+                    Un droit, pas une obligation.<br><br>
+
+                    Le joueur qui détient momentanément le droit à la parole peut disposer entièrement de sa liberté 
+                    d’en faire usage, ou pas. Ne pas parler ne signifie pas ne pas communiquer. 
+                    "On ne peut pas ne pas communiquer". 
+                    <br><br>
+
+                </p>
+            </div>
+
+            <!-- 2. Les Éléments -->
+            <div id="content2" class="tab-content">
+                <ul>
+                    <li>Nombre de joueurs : deux</li>
+                    <li>Préalable : 
+                        <ul>
+                            <li>Celui des deux qui a le premier connaissance de ce jeu et de ses règles propose à 
+                                l’autre de les découvrir.</li>
+                                <li>S’ils s’accordent pour y jouer, ils planifient une balade silencieuse dans un lieu calme, 
+                                    à l’écart de la foule, là où l’on se sent libre de parler..</li>
+                        </ul>
+                    </li>
+                    <li>Accessoires :
+                        <ul>
+                            <li>Deux petits sac à dos</li>
+                            <li>Une balle de tennis, (de tennis de table, de squash, un truc qui s’échange quoi…)</li>
+                            <li>Un minuteur (sur smartphone, par exemple)</li>
+                            <li>Une gourde ou une bouteille d’eau</li>
+                            <li>Deux gobelets</li>
+                        </ul>    
+                    </li>                
+                </ul>
+            </div>
+
+            <!-- 3. La Cafetière Mentale -->
+            <div id="content3" class="tab-content">
+                <p>Une cafetière sert … à préparer du café. 
+                    L’utilisation d’une cafetière italienne suppose le passage par un certain nombre d’étapes. 
+                    Pour les besoins du jeu, nous avons distingué 7 étapes. La liste de ces étapes et la séquence qu’elles constituent doit 
+                    être mémorisée pour pouvoir être parcourue mentalement 
+                    à chaque étape de transmission du témoin par celui qui le reçoit.
+                    Voici les 7 étapes :</p>
+                <ol>
+                    <li>Prendre le café moulu dans le frigo,</li>
+                    <li>Dévisser les deux parties de la cafetière,</li>
+                    <li>Remplir un petit récipient en verre servant de mesure pour la quantité 
+                        d’eau nécessaire pour remplir le réservoir,</li>
+                    <li>Verser le contenu du verre dans la partie réservoir de la cafetière,</li> 
+                    <li>Poser sur l’orifice supérieur du réservoir un élément contenant un filtre ainsi 
+                        qu’un compartiment  prévu  pour accueillir le café moulu, </li>
+                    <li>Remplir le compartiment adhoc de café,</li> 
+                    <li>Visser la partie supérieure de la cafetière sur le réservoir.</li>     
+                </ol>
+            </div>
+
+            <!-- 4. Les Symboles -->
+            <div id="content4" class="tab-content">
+                <ol class="roman-list">                    
+                    <li>
+                        <details>
+                            <summary>Les objets</summary>
+                            <p>
+                                <ol class="alpha-list">
+                                    <li>La balle de tennis symbolise le droit à la parole, 
+                                        par conséquent, celui qui détient la balle détient le droit à la parole. 
+                                        C'est le bâton de la parole en quelque sorte</li>
+                                    <li>Le café symbolise ce qu'il y a à dire. Préparer le café signifie donc préparer ce que l'on va dire. 
+                                        Par défaut tant qu'une tasse contient du café, c'est qu'il reste quelque chose à dire.</li>
+                                    <li>La gourde ou la bouteille d’eau symbolise une cafetière.</li>                            
+                                    <li>Un gobelet prend lieu d'une tasse à café</li>
+                                    <li>L'eau prend lieu du café</li>
+                                    <li>Le minuteur est le gardien du temps, le tiers extérieur qui rythme le jeu.</li>
+                                </ol>
+                            </p>
+                        </details>
+                    </li>
+                    <li>      
+                        <details>
+                            <summary>Les gestes, les attitudes</summary>
+                            <p>
+                                <ol class="alpha-list">
+                                    <li>Donner la balle de tennis à l’autresymbolise le fait de lui donner la parole. Cela signifie donc "Vas-y, je t'écoute!" (Voir la genèse du jeu). Mais à ce moment-là, la Règle du silence n'est pas encore levée.</li>
+                                    <li>Dans le cadre de ce jeu, déguster le café, à deux évidement, cad partager un café, symbolise le fait de partager un moment où l’un des joueurs parle, 
+                                        et l’autre écoute. Rappelons qu’écouter est une attitude active autant que celui de parler. Le partage d’un café n’est donc pas un échange en tant que tel, cad des allers-retours comme dans une partie de tennis. Le partage d’un café n’est qu’un aller, qu’un lancer de balle. Pour qu’il y ait retour et
+                                        donc échange au sens propre du terme il faut partager plusieurs cafés les uns à la suite des autres.</li>
+                                    <li>Le petit rituel, en silence, de préparation de la cafetière mentale a pour sens d’aménager 
+                                        une période de transition entre le moment où un des joueurs reçoit la balle et le moment où le temps chronométré démarre. 
+                                        Pendant cette période de transition, le joueur qui détient la balle concentre son esprit sur des images prédéfinies. 
+                                        Ce qui est propice à remettre les compteurs à zéro quant au contenu de la parole suivante. Le « go » pour la réflexion 
+                                        n’est pas encore donné. Le joueur qui a la parole ne doit pas obligatoirement répondre aux propos tenus lors du moment 
+                                        de partage du café précédent, l’éventuel attitude de changement récurrent de sujet est une information en soi concernant 
+                                        la qualité de l’échange, qui pourra faire 
+                                        l’objet de réflexions de fin de partie.</li>
+                                    <li>L’enclenchement du minuteur démarre la période dédiée à préparer le café. 
+                                        Il s’agit donc d’un temps imposé pour réfléchir,
+                                        et favoriser la qualité du propos qui sera tenu, mais sans garantie de résultat</li>
+                                    <li><b>L’échange de regards</b> permet au minimum la synchronisation, 
+                                        la confirmation que l’on est bien calé sur un moment précis dans la séquence du jeu, 
+                                        mais il permet aussi d'évaluer pour chacun la qualité de synchronisation sur tou autre plan. 
+                                        Il est le mode de communication non-verbale le plus</li>     
+                                    <li>Le café se déguste à deux, donc, chacun doit pouvoir influer sur le cours des choses. 
+                                        Chaque fois que celui qui écoute souhaite boire une gorgée de café il le communique du <b>regard</b>.
+                                        Ceci pourrait par exemple correspondre au fait qu’il vient de prendre connaissance d’une chose importante, 
+                                        ou simplement pour marquer un temps d’arrêt et se synchroniser. Les deux joueurs prennent 
+                                        une gorgée de café. Ce qui permet de vide la tasse, sans obliger de parler</li>
+                                    <li>Le joueur qui détient la balle peut refuser de faire usage de son droit à la parole, ne pas boire de café, 
+                                        ne pas rendre la balle, rester dans le mutisme et ne pas communiquer de façon explicite via le non-verbal, 
+                                        dans ce cas tout le monde a perdu, puisque le jeu est bloqué. La partie de tennis s’arrête. </li>     
+                                </ol>
+                            </p>                            
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary>Les évenements</summary>
+                            
+                            <p>
+                                <ol class="alpha-list">
+                                    <li>Au retentissement de la sonnerie du minuteur, la règle du silence est levée, 
+                                        mais uniquement pour celui qui détient la balle. 
+                                        (Souvenons-nous la balle symbolise le droit à la parole, seul celui qui la détient peut 
+                                        donc faire usage de ce droit.)</li>
+                                    <li>Lorsque le café est prêt, la cafetière est brûlante, le café aussi. 
+                                        Celui qui veut entamer la dégustation du café (cad faire usage de son droit à la parole) 
+                                        doit faire attention de ne pas se brûler ni brûler son camarade de jeu. Le café se déguste à deux. 
+                                        Si la parole (le café) est trop chaud(e)  pour celui qui l’émet, elle l’est aussi pour celui qui la reçoit. 
+                                        Il y a lieu de gérer le flux d’informations (de café). 
+                                        Cette gestion est laissée à discrétion du joueur qui détient la balle. </li>
+                                    <li>Lorsque la tasse est vide, la balle (le droit à la parole) doit changer de camps. Le geste qui 
+                                        consiste à donner à la balle à l’autre signifie « c’est à toi, vas-y, je t’écoute » , et l’échange se poursuit.</li>                            
+                                    <li>Si tout se passe bien, à savoir, les deux joueurs font usage de leur droit à la parole quand celui-ci lui est donné,                                        
+                                        la partie en cours (le set) s’arrête quand la cafetière est vide. 
+                                        Le fait que la partie se clôture par une victoire dépend de la qualité des échanges</li>
+                                    <li>Si les joueurs le souhaitent, une deuxième cafetière peut être préparée mais cela à condition 
+                                        soit qu’une deuxième bouteille d’eau soit disponible, 
+                                        soit qu’une fontaine se trouve à proximité et que l’on puisse remplir la bouteille vide</li>                                    
+                                </ol>
+                            </p>
+                        </details>
+                    </li>
+                </ol>                       
+            </div>
+                    
+            <!-- 5. La séquence -->                
+            <div id="content5" class="tab-content">
+                <ol class="roman-list">                 
+                    <li>
+                        <details>
+                            <summary>Démarrage</summary>
+                                <p>
+                                    <ol class="alpha-list">
+                                        <li>Au cours de la marche, après avoir suffisamment savouré le silence en présence de l’autre, 
+                                            et lors d’un échange <b>de regards</b>, les deux marcheurs s’accordent sur le fait 
+                                            de commencer le jeu</li>
+                                        <li>Un des deux joueurs tend la balle de tennis à l'autre. 
+                                            Soit le plus âgé si les deux joueurs ne se connaissent pas, soit celui des deux qui 
+                                            d'habitude parle le plus.</li>                                   
+                                    </ol>
+                                </p>                             
+                        </details>                      
+                    </li>
+                    <li>
+                        <details>
+                            <summary>Séquence en 3 temps</summary>                        
+                                <p>
+                                    <ol class="alpha-list">
+                                        <li>
+                                            <details> 
+                                                <summary>Temps I dans le silence : préparation du café</summary>
+                                                    <p>
+                                                        <ol class="roman-sublist">
+                                                            
+                                                            <li>Celui-ci la garde en main, et doit alors, mentalement, préparer la cafetière en 
+                                                                s’imaginant suivre les 7 étapes déjà décrites.</li>
+                                                            <li>Celui qui a tendu la balle s’assure, d’un échange <b>de regards</b> et toujours en silence, 
+                                                                auprès de l’autre que sa cafetière mentale est prête.</li>   
+                                                        </ol>
+                                                    </p>
+                                            </details>
+                                        </li>
+                                        <li>
+                                            <details>
+                                                <summary>Temps II : les <b>3’20’’</b> – dans le silence : </summary>
+                                                    <p>
+                                                        <ol class="roman-sublist">
+                                                            <li>Après confirmation, il lance sous les yeux de son camarade 
+                                                                de jeu le minuteur réglé sur <b>3’20’’</b>, pour préparer le café
+                                                            </li>
+                                                            <li>A partir de là, la marche reprends son cours. Le silence est toujours de mise 
+                                                                jusqu’à ce que le café soit prêt (sonnerie du minuteur).</li>
+                                                            <li>Au retentissement de la sonnerie du minuteur, les deux joueurs marquent un temps d’arrêt et se 
+                                                                regardent dans les yeux un court instant. Le joueur qui tient la balle en main la range dans son sac</li>   
+                                                        </ol>
+                                                    </p>
+                                            </details>
+                                        </li>
+                                        <li>
+                                            <details> 
+                                                <summary>Temps III levée partielle de la loi du le silence : place au café et à la parole</summary>
+                                                    <p>
+                                                        <ol class="roman-sublist">
+                                                            <li>La marche reprend, la règle du silence est levée, mais uniquement pour 
+                                                                celui qui détient la balle.  
+                                                            </li>
+                                                            <li>Lorsque celui-ci souhaite rompre le silence, il s’arrête, et capte 
+                                                                <b>le regard</b> de son compagnon de jeu. 
+                                                                Celui-ci lui sert une tasse de café, 
+                                                                et celui qui détient la balle prend une petite gorgée de café 
+                                                                (d’eau en fait), et prend la parole</li>
+                                                            <li>A moins d’avoir attendu suffisamment longtemps pour que le café ait refroidit, 
+                                                                il ne le déguste que par petites gorgées</li>
+                                                            <li>Lorsque la tasse est vide, le joueur qui détient la balle la tend à 
+                                                                l'autre joueur, 
+                                                                pour lui donner droit de réponse. Retour au Temps I.</li>   
+                                                        </ol>
+                                                    </p>
+                                            </details>
+                                        </li>                                              
+                                    </ol>                                
+                                </p>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary>Fin</summary>
+                                <p>
+                                    <ol class="alpha-list">
+                                        <li>La partie de tennis, ou peut-être simplement le premier set, se termine lorsque la cafetière est vide. Le cas échant, une autre cafetière peut être préparée (si une deuxième bouteille d’eau est disponible ou si on est en mesure de remplir la première parce qu’il y a une fontaine à proximité) et relancer la partie pour le set suivant. Les sets pouvant évidemment s’étaler sur plusieurs jours. Parfois la pluie interrompt la partie, qui en aucun cas n’est un match. Il ne peut y avoir de gagnant ou de perdant isolé. Soit les deux s’en sortent gagnants, soit perdants. Au pire peut-il y avoir un désaccord entre les parties concernant le fait que le jeu ait permis ou pas de faciliter la communication.
+                                        A la fin de la partie (ou du set), la règle du silence est levée pour les deux joueurs, un débriefing d’après match est vivement conseillé
+                                        </li>                                   
+                                    </ol>
+                                </p>                             
+                        </details>                      
+                    </li>               
+                </ol> 
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Pied de page -->
+    <footer>
+        Copyright © 2026, Paul Guldin, tous droits réservés.
+    </footer>
+
+</body>
+</html>
